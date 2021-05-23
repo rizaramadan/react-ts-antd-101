@@ -8,9 +8,10 @@ import './Login.css';
 
 
 
-class Login extends Component<RouteComponentProps<any, StaticContext, unknown>, any, any> {
-  constructor(props: RouteComponentProps<any, StaticContext, unknown>) {
+class Login extends Component<RouteComponentProps> {
+  constructor(props: RouteComponentProps) {
     super(props)
+    //the line below is mindblowing. This is needed for 'this' to be defined in login() function.
     this.login = this.login.bind(this)
   }
   
@@ -20,6 +21,7 @@ class Login extends Component<RouteComponentProps<any, StaticContext, unknown>, 
 
   login() {
     AuthContext.isLoggedIn = true;
+    //line belom wont worked if no binding of this, that is being done at constuctor
     this.props.history.push('/');
   }
 

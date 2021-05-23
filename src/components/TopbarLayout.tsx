@@ -5,7 +5,6 @@ import './TopbarLayout.css'
 
 const { Header, Content, Footer } = Layout;
 
-
 class TopbarLayout extends Component {
   constructor(props : any) {
     super(props)
